@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'com.chegg'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    //maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile 'io.leangen.graphql:spqr:0.10.1'
+    //implementation 'com.github.leangen:graphql-spqr:86ce7d4'
+    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:6.0.1'
+    implementation 'com.graphql-java-kickstart:graphiql-spring-boot-starter:6.0.1'
+
+    implementation 'com.apollographql.federation:federation-graphql-java-support:0.3.2'
+    //implementation fileTree(include: ['federation-graphql-java-support-0.5.1-SNAPSHOT-jar-with-dependencies.jar'], dir: '/Users/ankit.j/chegg/federation-jvm-master/graphql-java-support/target')
+
+
+}

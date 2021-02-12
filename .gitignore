@@ -1,0 +1,4 @@
+.gradle/
+.idea/
+apollo-federation-js/node_modules/
+*/build/
