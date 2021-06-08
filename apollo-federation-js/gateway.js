@@ -12,26 +12,11 @@ const gateway = new ApolloGateway({
         { name: "reviews", url: "http://localhost:5003/graphql" },
         { name: "products", url: "http://localhost:5001/graphql" }
 
-    ],
-    buildService({name,url}){
-        return new AuthenticatedDataSource({url});
-    },
-    fetcher: require('make-fetch-happen').defaults({
-        timeoutSeconds: 1,
-        retry: {
-            retries: 2,
-            randomize: true
-        }
-    }),
+    ]
     // Experimental: Enabling this enables the query plan view in Playground.
     __exposeQueryPlanExperimental: true,
 });
 
-class AuthenticatedDataSource extends RemoteGraphQLDataSource {
-    willSendRequest({ request, context }) {
-        request.http.headers.set('x-chegg-user-uuid', context.userId);
-    }
-}
 
 (async () => {
     const server = new ApolloServer({
